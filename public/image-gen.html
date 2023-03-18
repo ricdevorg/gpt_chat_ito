@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-Ito Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid mb-10 mh-100">
+        <div class="sticky-top text-bg-dark">
+            <h1 class="mt-3 mb-3 text-center">Chat-Ito | Generador de Imágenes</h1>
+            <!-- Formulario -->
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-8 mb-3 ">
+                    <textarea id="txtPromptInput" class="form-control" rows="2" placeholder="Describe tu imagen"></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                
+                <div class="col-md-8 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div class="mt-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sizeRadioOpt" id="imgSize256" value="256x256" checked>
+                            <label class="form-check-label" for="imgSize256">256x256</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sizeRadioOpt" id="imgSize512" value="512x512">
+                            <label class="form-check-label" for="imgSize512">512x512</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sizeRadioOpt" id="imgSize1024" value="1024x1024">
+                            <label class="form-check-label" for="imgSize1024">1024x1024</label>
+                        </div>
+                    </div> 
+                    
+                    <button id="btnSend" class="btn btn-success" type="button">Enviar a Chat-Ito Artista</button>   
+                    <button id="btnClear" class="btn btn-primary" type="button">Limpiar</button>   
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="row justify-content-center ">
+            <!-- Lista de respuestas -->
+            <div class="col-md-8 pt-3">
+                <div class="list-group ">
+                    <ol class="list-group list-group-numbered" id="lstResults">
+                    </ol>
+                </div>
+            </div>
+        </div>     
+    </div>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./js/image-gen.js"></script>
+</body>
+</html>

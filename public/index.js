@@ -24,9 +24,10 @@ function sendToChatGPT(){
     })
     .then((response)=>response.json())
     .then((data)=>{
-        console.log(data.message);
+        console.log(data.message.content);
         console.log(data.usage);
-        lstResults.innerHTML += createItem(prompt,data.message.content);
+        const stringParsed = replaceBackticksWithPre(data.message.content);
+        lstResults.innerHTML += createItem(prompt,stringParsed);
     })
     .catch((error)=>{
         console.error("Error:", error);
@@ -43,6 +44,12 @@ function createItem(prompt,message){
                 </li>`
 
     return item;
+}
+
+function replaceBackticksWithPre(string) {
+    const regex = /```([\s\S]*?)```/g;
+    const response = string.replace(regex, "<pre>$1</pre>");    
+    return response;
 }
 
 function clearAll(){
